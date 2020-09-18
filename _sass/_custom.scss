@@ -1,0 +1,18 @@
+/* Onclick con apariencia de link */
+[onclick] {
+    cursor: pointer;
+}
+span[onclick] {
+    transition: all .3s ease-in-out;
+    color: darken($primary, 24%);;
+}
+span[onclick]:hover {
+    color: darken($primary, 15%);
+    text-decoration: underline;
+}
+
+/* Logo y h1 de inicio  */
+.navbar-brand,
+.sitetag {
+    max-width: 700px;
+}

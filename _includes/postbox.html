@@ -31,16 +31,40 @@
             <div class="wrapfooter">
                 {% if post.author %}
                 <span class="meta-footer-thumb">
-                {% if author.avatar %}
-                <img class="author-thumb" src="{{site.baseurl}}/{{ author.avatar }}" alt="{{ author.display_name }}">
-                {% else %}
-                <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
-                {% endif %}
+                    {% if author.avatar %}
+                    <img class="author-thumb" src="{{site.baseurl}}/{{ author.avatar }}" alt="{{ author.display_name }}">
+                    {% else %}
+                    <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
+                    {% endif %}
                 </span>
                 <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="{{ author.web }}">{{ author.display_name }}</a></span> 
+                    <span class="post-name">
+                        {% if author.web %}
+                        <a href="{{ author.web }}" target="_blank">{{ author.display_name }}</a>
+                        {% else %}
+                        <span class="font-weight-bold">{{ author.display_name }}</span>
+                        {% endif %}
+                    </span> 
                 {% endif %}
-                <span class="post-date">{{ post.date | date_to_string }}</span>
+                    <span class="post-date">
+                        {% assign mes = post.date | date: "%-m" %}
+                        {{ post.date | date: "%-d" }}
+                        {% case mes %}
+                            {% when '1' %}Ene
+                            {% when '2' %}Feb
+                            {% when '3' %}Mar
+                            {% when '4' %}Abr
+                            {% when '5' %}May
+                            {% when '6' %}Jun
+                            {% when '7' %}Jul
+                            {% when '8' %}Ago
+                            {% when '9' %}Sep
+                            {% when '10' %}Oct
+                            {% when '11' %}Nov
+                            {% when '12' %}Dic
+                        {% endcase %}
+                        {{ post.date | date: "%Y" }}
+                    </span>
                 </span>
                 <div class="clearfix"></div>
             </div>

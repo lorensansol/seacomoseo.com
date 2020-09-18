@@ -18,14 +18,58 @@ post_class: post-template
             {% else %}
             <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
             {% endif %}
-        </div>            
+        </div>
         <div>
-        Written by <a target="_blank" class="text-dark" href="{{ author.web }}">{{ author.display_name }}</a> on 
-        <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>           
-        {% if page.last_modified_at %}
-        (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
-        {% endif %}
-        </div>            
+            {% if author.display_name %}
+            {% if author.web %}
+            <a target="_blank" class="font-weight-bold text-dark mr-3" href="{{ author.web }}">{{ author.display_name }}</a>
+            {% else %}
+            <span class="font-weight-bold text-dark mr-3">{{ author.display_name }}</span>
+            {% endif %}
+            {% endif %}
+            <span class="post-date">
+                <time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">
+                    {% assign m = page.date | date: "%-m" %}
+                    {{ page.date | date: "%-d" }}
+                    {% case m %}
+                        {% when '1' %}Ene
+                        {% when '2' %}Feb
+                        {% when '3' %}Mar
+                        {% when '4' %}Abr
+                        {% when '5' %}May
+                        {% when '6' %}Jun
+                        {% when '7' %}Jul
+                        {% when '8' %}Ago
+                        {% when '9' %}Sep
+                        {% when '10' %}Oct
+                        {% when '11' %}Nov
+                        {% when '12' %}Dic
+                    {% endcase %}
+                    {{ page.date | date: "%Y" }}
+                </time>
+            </span>           
+            {% if page.last_modified_at %}
+            (Actualizado: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">
+                {% assign lm = page.last_modified_at | date: "%-m" %}
+                {{ page.last_modified_at | date: "%-d" }}
+                {% case lm %}
+                    {% when '1' %}Ene
+                    {% when '2' %}Feb
+                    {% when '3' %}Mar
+                    {% when '4' %}Abr
+                    {% when '5' %}May
+                    {% when '6' %}Jun
+                    {% when '7' %}Jul
+                    {% when '8' %}Ago
+                    {% when '9' %}Sep
+                    {% when '10' %}Oct
+                    {% when '11' %}Nov
+                    {% when '12' %}Dic
+                {% endcase %}
+                {{ page.last_modified_at | date: "%Y" }}
+            </time>)
+            {% endif %}
+        </div>
     </div>
     {% endif %}
 </div>
@@ -44,7 +88,7 @@ post_class: post-template
 <!-- Rating -->
 {% if page.rating %}
 <div class="rating mt-4 mb-4 d-flex align-items-center">
-    <strong class="mr-1">Rating:</strong> {% include star_rating.html %}
+    <strong class="mr-1">Valoración:</strong> {% include star_rating.html %}
 </div>
 {% endif %}
 

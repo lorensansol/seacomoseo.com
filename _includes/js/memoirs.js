@@ -32,7 +32,7 @@ jQuery(document).ready(function($){
 	
 	
 	// toggle comments
-    $('.show-comments').on('click', function() {  
+  $('.show-comments').on('click', function() {  
 		$('#comments').toggleClass('comments--show');		
 	});
 
@@ -41,17 +41,17 @@ jQuery(document).ready(function($){
 		$('.bd-search').toggleClass('search--show');		
 	});
     
-    // spoilers
-     $(document).on('click', '.spoiler', function() {
-        $(this).removeClass('spoiler');
-     });
+	// spoilers
+	$(document).on('click', '.spoiler', function() {
+		$(this).removeClass('spoiler');
+	});
     
  });   
 
 // deferred style loading
 var loadDeferredStyles = function () {
-	var addStylesNode = document.getElementById("deferred-styles");
-	var replacement = document.createElement("div");
+	var addStylesNode = document.getElementById('deferred-styles');
+	var replacement = document.createElement('div');
 	replacement.innerHTML = addStylesNode.textContent;
 	document.body.appendChild(replacement);
 	addStylesNode.parentElement.removeChild(addStylesNode);
@@ -66,7 +66,7 @@ else window.addEventListener('load', loadDeferredStyles);
 
 // Reset animations on page: body.preload
 setTimeout(function(){
-	document.body.className="";
+	document.body.className='';
 },500);
 
 // Open/close navigation when clicked .nav-icon
@@ -74,49 +74,49 @@ $(document).ready(function(){
 	$('.nav-icon').click(function(){
 		$('.nav-icon').toggleClass('active');
 	});
-	$(".nav-icon").click(function(){
-		$("#menu").toggleClass('active');
+	$('.nav-icon').click(function(){
+		$('#menu').toggleClass('active');
 	});
-	$(".nav-icon").click(function(){
-		$("#blackover-nav").toggleClass('active');
+	$('.nav-icon').click(function(){
+		$('#blackover-nav').toggleClass('active');
 	});
-	$(".nav-icon").click(function(){
-		$("body").toggleClass('active-side');
+	$('.nav-icon').click(function(){
+		$('body').toggleClass('active-side');
 	});
 });
 
 // Close navigation when clicked .blackover (Black background)
 $(document).ready(function(){
-	$("#blackover-nav").click(function(){
-		$(".nav-icon").removeClass('active');
+	$('#blackover-nav').click(function(){
+		$('.nav-icon').removeClass('active');
 	});
-	$("#blackover-nav").click(function(){
-		$("#menu").removeClass('active');
+	$('#blackover-nav').click(function(){
+		$('#menu').removeClass('active');
 	});
-	$("#blackover-nav").click(function(){
-		$("#blackover-nav").removeClass('active');
+	$('#blackover-nav').click(function(){
+		$('#blackover-nav').removeClass('active');
 	});
-	$("#blackover-nav").click(function(){
-		$("body").removeClass('active-side');
+	$('#blackover-nav').click(function(){
+		$('body').removeClass('active-side');
 	});
 });
 
 // Grid selector Inspiration
 $(document).ready(function(){
-	$(".grid-selector").click(function(){
-		$(".grid-selector").toggleClass('active');
+	$('.grid-selector').click(function(){
+		$('.grid-selector').toggleClass('active');
 	});
-	$(".grid-selector").click(function(){
-		$(".post").toggleClass('active');
+	$('.grid-selector').click(function(){
+		$('.post').toggleClass('active');
 	});
 });
 
 $(document).keyup(function(e) {
 	if (e.keyCode == 27) { 
-		$(".nav-icon").removeClass('active');
-		$("#menu").removeClass('active');
-		$("#blackover-nav").removeClass('active');
-		$("body").removeClass('active-side');
+		$('.nav-icon').removeClass('active');
+		$('#menu').removeClass('active');
+		$('#blackover-nav').removeClass('active');
+		$('body').removeClass('active-side');
 	}
 });
 
