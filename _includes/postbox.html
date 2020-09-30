@@ -2,68 +2,48 @@
 {% assign author = site.authors[post.author] %}
 
 <div class="blog-grid-item">
-    <div class="card h-100">
-        <div class="maxthumb">
-            <a href="{{ site.baseurl }}{{ post.url }}">
-                {% if post.image %}
-
-                    {% if site.lazyimages == "enabled" %}
-                        <img class="img-thumb lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" alt="{{ post.title }}">
-                    {% else %}
-                        <img class="img-thumb" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" alt="{{ post.title }}"> 
-                    {% endif %}
-
-                {% endif %}
-            </a>
+    <div class="card h-100 w-100">
+        <div class="maxthumb" onclick="location.href='{{ site.baseurl }}{{ post.url }}'">
+            {% include featured-image.html image=post.image %}
         </div>
         <div class="card-body">
             <h2 class="card-title">
                 <a class="text-dark" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-                {% if post.rating %}
-                <div class="mb-2 mt-2 font-weight-normal">
-                {% include star_rating_postbox.html %}
-                </div>
-                {% endif %}
             </h2>
             <h4 class="card-text">{{ post.excerpt | strip_html | truncatewords:30 }}</h4>
         </div>
         <div class="card-footer bg-white">
             <div class="wrapfooter">
                 {% if post.author %}
-                <span class="meta-footer-thumb">
-                    {% if author.avatar %}
-                    <img class="author-thumb" src="{{site.baseurl}}/{{ author.avatar }}" alt="{{ author.display_name }}">
-                    {% else %}
-                    <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
-                    {% endif %}
-                </span>
-                <span class="author-meta">
-                    <span class="post-name">
-                        {% if author.web %}
-                        <a href="{{ author.web }}" target="_blank">{{ author.display_name }}</a>
+                    <span class="meta-footer-thumb">
+                        {% if author.avatar %}
+                            {% if jekyll.environment == "production" %}
+                                <img class="author-thumb" width="40" height="40" data-src="https://images.weserv.nl/?url={{ site.url }}{{ site.baseurl }}{{ author.avatar }}&w=40&q=65" alt="{{ author.name }}">
+                            {% else %}
+                                <img class="author-thumb" width="40" height="40" data-src="{{ site.baseurl }}{{ author.avatar }}" alt="{{ author.name }}">
+                            {% endif %}
                         {% else %}
-                        <span class="font-weight-bold">{{ author.display_name }}</span>
+                            <img class="author-thumb" data-src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=50&d=mm&r=x" alt="{{ author.name }}">
                         {% endif %}
-                    </span> 
+                    </span>
+                    <span class="author-meta">
+                        <span class="post-name">
+
+                          {% if author.name %}
+                            {% if site.author-links %}
+                              {% if author.web %}
+                                <a onclick="window.open('{{ author.web }}','_blank')">{{ author.name }}</a>
+                              {% else %}
+                                <a onclick="location.href='{{ site.baseurl }}/autores#{% if page.author %}{{ page.author }}{% else %}{{ auth[0] }}{% endif %}'">{{ author.name }}</a>
+                              {% endif %}
+                            {% else %}
+                              <span class="font-weight-bold">{{ author.name }}</span> 
+                            {% endif %}
+                          {% endif %}
+                        </span> 
                 {% endif %}
                     <span class="post-date">
-                        {% assign mes = post.date | date: "%-m" %}
-                        {{ post.date | date: "%-d" }}
-                        {% case mes %}
-                            {% when '1' %}Ene
-                            {% when '2' %}Feb
-                            {% when '3' %}Mar
-                            {% when '4' %}Abr
-                            {% when '5' %}May
-                            {% when '6' %}Jun
-                            {% when '7' %}Jul
-                            {% when '8' %}Ago
-                            {% when '9' %}Sep
-                            {% when '10' %}Oct
-                            {% when '11' %}Nov
-                            {% when '12' %}Dic
-                        {% endcase %}
-                        {{ post.date | date: "%Y" }}
+                        {% include date-spa.html date=post.date %}
                     </span>
                 </span>
                 <div class="clearfix"></div>

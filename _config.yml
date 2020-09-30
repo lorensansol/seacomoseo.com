@@ -2,24 +2,28 @@
 name: 'SEA COMO SEO'
 title: 'SEA COMO SEO'
 description: 'Tutoriales y trucos de SEO, Diseño Web y Desarrollo'
-logo: 'assets/images/logo-sea-como-seo.png'
-favicon: 'assets/images/logo-sea-como-seo.png'
+url: https://lorensansol.github.io
 baseurl: /seacomoseo.com
-google_analytics: #'UA-xxxxxxxx-1'
-google_site_verification: #
-lang: es
+logo: /assets/img/logo-sea-como-seo.png
+favicon: /assets/img/logo-sea-como-seo.png
+google_analytics: UA-75330923-2
+google_site_verification: 'Sb-MUAYWclN8UdYEC0-7YsKPFBAsrAPYNmM-k5QOXak'
+# google_adsense: "ca-pub-7914952536979255" # ca-pub-xxxxxxxxxxxxxxxx
+# mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+email: '&#x73;&#x65;&#x61;&#x63;&#x6F;&#x6D;&#x6F;&#x73;&#x65;&#x6F;&#x40;&#x67;&#x6D;&#x61;&#x69;&#x6C;&#x2E;&#x63;&#x6F;&#x6D;'
 disqus: 'seacomoseo'
-mailchimp-list: # 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
-include: ['_pages']
+lang: es
 permalink: /:title
-email: '&#x73;&#x65;&#x61;&#x63;&#x6F;&#x6D;&#x6F;&#x73;&#x65;&#x6F;&#x40;&#x67;&#x6D;&#x61;&#x69;&#x6C;&#x2E;&#x63;&#x6F;&#x6D;' # seacomoseo@gmail.com
+authorbox: true
+author-links: true
 search: true
+lazy-load-comments: false # if not, comments load when clic
+critical-path-css: false
 
 # Authors
 authors:
   sal:
     name: Sal
-    display_name: Sal
     gravatar: e56154546cf4be74e393c62d1ae9f9d4
     email: wowthemesnet@gmail.com
     web: https://www.wowthemes.net/donate/
@@ -27,18 +31,17 @@ authors:
     description: 'Author of Mediumish, a Bootstrap Medium styled template available for WordPress, HTML, Ghost and Jekyll. You are currently previewing Jekyll template demo.'
   john:
     name: John
-    display_name: John
-    avatar: 'assets/images/avatar.png'
+    avatar: /assets/img/avatar.png
     gravatar: b1cc14991db7a456fcd761680bbc8f81
     email: wowthemesnet@gmail.com
     web: https://www.wowthemes.net
     twitter: https://twitter.com/wowthemesnet
     description: 'This is the author box. Write a short description of the author here. You are currently previewing Mediumish demo, a Jekyll template compatible with Github pages.'
   loren:
-    name: Loren
-    display_name: Loren
+    name: Loren San Sol
+    avatar: /assets/img/loren-san-sol-scs.jpg
     gravatar: a48d43c9530f50721162853c0b68aebc
-    # email: '&#x6C;&#x6F;&#x72;&#x65;&#x6E;&#x73;&#x61;&#x6E;&#x73;&#x6F;&#x6C;&#x40;&#x67;&#x6D;&#x61;&#x69;&#x6C;&#x2E;&#x63;&#x6F;&#x6D;' # lorensansol@gmail.com
+    # email: '&#x6C;&#x6F;&#x72;&#x65;&#x6E;&#x73;&#x61;&#x6E;&#x73;&#x6F;&#x6C;&#x40;&#x67;&#x6D;&#x61;&#x69;&#x6C;&#x2E;&#x63;&#x6F;&#x6D;'
     # web: https://seacomoseo.com/
     # twitter: https://twitter.com/lorensansol
     description: 'SEO y maquetación web son mis especialidades. Desarrollo web es lo que me pone. ¡Y en eso estamos!'
@@ -63,30 +66,14 @@ jekyll-archives:
 # Pagination
 paginate: 6
 paginate_path: /page:num/
-seo_paginator_message: 'Página %<current>s de %<total>s | '
 
-# Other
-highlighter: rouge
-markdown: kramdown
-kramdown:
-  syntax_highlighter_opts:
-    disable: true
-
-# Adsense (change to 'enabled' to activate, also your client id and ad slot. Create a new ad unit from your Adsense account to get the slot.)
-adsense: 'disabled'
-adsense-data-ad-client: 'ca-pub-3412143450191416'
-adsense-data-ad-slot: '1363087678'
-
-# Lazy Images ('enabled' or 'disabled')
-lazyimages: 'disabled'
-
-# Post Author Box ('enabled' or 'disabled')
-authorbox: 'enabled'
-
-# Sass
-sass:
-  sass_dir: _sass
-  style: compressed
+# Drafts and pages like collections
+collections:
+  drafts:
+    output: true
+  pages:
+    output: true
+    permalink: /:name
 
 # Compress HTML
 compress_html:
@@ -94,6 +81,9 @@ compress_html:
   comments: all
   ignore:
     envs: [development]
+
+# Exclude
+exclude: [README.md, Gemfile, Gemfile.lock]
 
 # Defaults values
 defaults:
@@ -107,21 +97,38 @@ defaults:
       toc: true
       description: false
       comments: true
+  - # All posts
+    scope:
+      path: ''
+      type: 'drafts'
+    values:
+      layout: post
+      author: loren
+      toc: true
+      description: false
+      comments: false
+      sitemap: false
   - # All pages
     scope:
       path: ''
       type: 'pages'
     values:
       layout: page
-      toc: true
+      toc: false
       description: false
       comments: false
-      # permalink: /:name
+      sitemap: false
   - # Neither noindex nor sitemap in pages
     scope:
       path: 'page'
     values:
       sitemap: false
 
-# Exclude
-exclude: [README.md, Gemfile, Gemfile.lock]
+# Other
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
+
+# DEVELOPMENT CONFIG IN _config_dev.yml

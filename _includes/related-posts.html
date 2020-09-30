@@ -3,22 +3,22 @@
 <div class="{% unless page.categories == empty %} related-posts {% endunless %}">  
 
     {% unless page.categories == empty %}
-    <h2 class="text-center mb-4">Relacionados</h2>
+        <h2 class="text-center mb-4">Relacionados</h2>
     {% endunless %}
     
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex flex-wrap justify-content-center align-items-center">
     
-    <!-- Categories -->
-    {% assign sortedCategories = page.categories | sort %}
-    {% for category in sortedCategories %}
-    <a class="smoothscroll badge badge-primary text-capitalize" href="{{site.baseurl}}/categorias#{{ category | replace: " ","-" }}">{{ category }}</a>                
-    {% endfor %}
+        <!-- Categories -->
+        {% assign sortedCategories = page.categories | sort %}
+        {% for category in sortedCategories %}
+            <span class="smoothscroll btn btn-primary badge text-capitalize" onclick="location.href='categorias#{{ category | slugify: 'latin' }}'">{{ category }}</span>
+        {% endfor %}
 
-    <!-- Tags -->  
-    {% assign sortedTags = page.tags | sort %}
-    {% for tag in sortedTags %}                
-    <a class="smoothscroll badge badge-primary text-capitalize" href="{{site.baseurl}}/tags#{{ tag | replace: " ","-" }}">{{ tag }}</a>               
-    {% endfor %}
+        <!-- Tags -->  
+        {% assign sortedTags = page.tags | sort %}
+        {% for tag in sortedTags %}
+            <span class="smoothscroll btn btn-primary badge text-capitalize" onclick="location.href='etiquetas#{{ tag | slugify: 'latin' }}'">{{ tag }}</span>
+        {% endfor %}
 
     </div>
 
@@ -50,5 +50,5 @@
             {% endif %}
         
         {% endfor %}
-        </div>        
+    </div>        
 </div>

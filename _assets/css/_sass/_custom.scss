@@ -1,0 +1,57 @@
+// Smooth scroll
+html {
+	scroll-behavior: smooth;
+}
+
+// Color of onclick links and primary text
+.text-primary,
+span[onclick] {
+    transition: all .3s ease-in-out;
+    color: darken($primary, 20%) !important;
+}
+a:not(.btn):hover,
+a.text-primary:not(.btn):hover,
+span[onclick]:not(.btn):hover {
+    color: darken($primary, 40%) !important;
+    text-decoration: underline;
+}
+
+// Correct min-width in btn + badge
+.badge.btn {
+    min-width: inherit !important;
+}
+
+// Badge avatar
+.badge .author-thumb {
+    width: 1em;
+    border-radius: 50%;
+}
+
+// Correct ofuscate badge of categories and tags
+.badge[onclick],
+.badge[onclick]:hover {
+    color: #000 !important;
+}
+
+// Logo and h1 of inicio
+.navbar-brand,
+.sitetag {
+    max-width: 700px;
+}
+
+// Correct show / hide search result
+#lunrsearchresults {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s linear, visibility .5s step-end;
+    &.show {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .5s linear, visibility 0s step-start;
+    }
+}
+
+// Correct featured-image dimensions
+.featured-image {
+    width: auto !important;
+}

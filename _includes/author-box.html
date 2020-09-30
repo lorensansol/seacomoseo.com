@@ -1,31 +1,37 @@
 <!-- Author Box -->
-{% if page.author %} {% if site.authorbox == "enabled" %}
+{% if site.authorbox %}
 <div class="row authorbox align-items-center">
   <div class="col-md-2 pb-4 pb-md-0">
     {% if author.avatar %}
-    <img class="author-thumb" src="{{site.baseurl}}/{{ author.avatar }}" alt="{{ author.display_name }}" />
+      {% if jekyll.environment == "production" %}
+        <img class="author-thumb" width="85" height="85" data-src="https://images.weserv.nl/?url={{ site.url }}{{ site.baseurl }}{{ author.avatar }}&w=85&q=65" alt="{{ author.name }}" />
+      {% else %}
+        <img class="author-thumb" width="85" height="85" data-src="{{ site.baseurl }}{{ author.avatar }}" alt="{{ author.name }}" />
+      {% endif %}
     {% else %}
-    <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}" />
+      <img class="author-thumb" data-src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=70&d=mm&r=x" alt="{{ author.name }}" />
     {% endif %}
   </div>
   <div class="col-md-10">
-    {% if author.web %}
-    <a target="_blank" class="text-dark h4" href="{{ author.web }}">
-      Sobre {{ author.display_name }}
-    </a>
-    {% else %}
-    <span class="text-dark h4">
-      Sobre {{ author.display_name }}
-    </span>
+    {% if author.name %}
+      {% if site.author-links %}
+        {% if author.web %}
+          <a class="text-dark h4" onclick="window.open('{{ author.web }}','_blank')">Sobre {{ author.name }}</a>
+        {% else %}
+          <a class="text-dark h4" onclick="location.href='{{ site.baseurl }}/autores#{% if page.author %}{{ page.author }}{% else %}{{ auth[0] }}{% endif %}'">Sobre {{ author.name }}</a>
+        {% endif %}
+      {% else %}
+        <span class="text-dark h4">Sobre {{ author.name }}</span> 
+      {% endif %}
     {% endif %}
     {% if author.twitter %}
-    <a target="_blank" href="{{ author.twitter }}" class="btn-sm">
-      <i class="fab fa-twitter"></i>
-    </a>
+      <a onclick="window.open('{{ author.twitter }}','_blank')" class="btn-sm text-primary">
+        <i class="fab fa-twitter"></i>
+      </a>
     {% endif %}
     <span class="author-description d-block mt-2">
       {{ author.description }}
     </span>
   </div>
 </div>
-{% endif %} {% endif %}
+{% endif %}

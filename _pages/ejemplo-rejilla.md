@@ -1,6 +1,5 @@
 ---
 title: Ejemplo de rejilla adaptable sólo con HTML y CSS
-sitemap: false
 ---
 
 <style type="text/css">

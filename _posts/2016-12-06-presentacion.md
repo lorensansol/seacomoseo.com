@@ -1,7 +1,7 @@
 ---
 title:  "Presentación SEA COMO SEO"
 categories: General
-image: https://seacomoseo.com/wp-content/uploads/loren-san-sol-scs.jpg
+image: /assets/img/loren-san-sol-scs.jpg
 toc: false
 ---
 ¡Hola! ¡Bienvenido a SEA COMO SEO!

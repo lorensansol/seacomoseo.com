@@ -1,7 +1,7 @@
 ---
 title: Sobre SEA COMO SEO
-image: https://seacomoseo.com/wp-content/uploads/loren-san-sol-scs.jpg
-sitemap: false
+image: /assets/img/loren-san-sol-scs.jpg
+toc: true
 ---
 
 ## ¿De qué va esto?
@@ -34,7 +34,7 @@ Y bueno, fuera de la temática de este sitio, las otras cosas a las que más ded
 
 ¡Nos vemos en las SERPs!
 
-![Loren San Sol](https://seacomoseo.com/wp-content/uploads/loren-san-sol.jpg){: .d-block.mx-auto.image-shadow}
+![Loren San Sol]({{ site.baseurl }}/assets/img/loren-san-sol.jpg){: .d-block.mx-auto.image-shadow}
 
 ## Contacto
 

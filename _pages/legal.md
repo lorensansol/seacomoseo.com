@@ -1,9 +1,9 @@
 ---
 title: Aviso Legal
-sitemap: false
 ---
 
-<p class="h3 font-weight-bold mb-0">Índice</p>
+Índice
+{:.h3.font-weight-bold.mb-0}
 
 - [Sus datos seguros](#datos-seguros)
 - [Política de protección de datos](#proteccion-datos)
@@ -27,13 +27,15 @@ Muchas gracias por su colaboración.
 
 ### ¿Quiénes somos?
 
-- Nuestra denominación: _Lorenzo Sánchez Sola_
-- Nuestro CIF / NIF: _48498059Y_
-- Nuestra actividad principal: _DISEÑO WEB_
-- Nuestra dirección: _Calle Nieves Viudes 11, 30570, Murcia_
-- Nuestro teléfono de contacto: _638711683_
-- Nuestra dirección de correo electrónico de contacto: _seacomoseo@gmail.com_
-- Nuestro sitio web: _seacomoseo.com_
+<ul>
+    <li>Nuestra denominación: <em>Lorenzo Sánchez Sola</em></li>
+    <li>Nuestro CIF / NIF: <em>48498059Y</em></li>
+    <li>Nuestra actividad principal: <em>DISEÑO WEB</em></li>
+    <li>Nuestra dirección: <em>Calle Nieves Viudes, 30570, Murcia</em></li>
+    <li>Nuestro teléfono de contacto: <em>638711683</em></li>
+    <li>Nuestra dirección de correo electrónico de contacto: <em>{{ site.email }}</em></li>
+    <li>Nuestro sitio web: <em>seacomoseo.com</em></li>
+</ul>
 
 Estamos a su disposición, no dude en contactar con nosotros.
 
@@ -83,7 +85,7 @@ Para solicitar alguno de estos derechos, deberá realizar una solicitud escrita 
 
 En las oficinas de nuestra entidad disponemos de formularios específicos para solicitar dichos derechos y le ofrecemos nuestra ayuda para su cumplimentación.
 
-Para saber más sobre sus derechos de protección de datos, puede consultar el sitio web de la Agencia Española de Protección de Datos (<button onclick="window.open('https://www.agpd.es','_blank')">www.agpd.es</button>).
+Para saber más sobre sus derechos de protección de datos, puede consultar el sitio web de la Agencia Española de Protección de Datos (<span onclick="window.open('https://www.agpd.es','_blank')">www.agpd.es</span>).
 
 ### ¿Puede retirar su consentimiento si cambia de opinión en un momento posterior?
 
@@ -336,16 +338,16 @@ Por último, indicarte que, si activas **cookies de terceros** (empresas externa
 
 Para que te sea mucho más fácil, a continuación te relacionamos una serie de enlaces a las pautas de desactivación de cookies de los navegadores de uso común:
 
-- <button class="btn btn-primary btn-sm mb-1" onclick="window.open('https://support.google.com/accounts/answer/61416?co=GENIE.Platform%3DDesktop&amp;hl=es','_blank')">Google Chrome</button>
-- <button class="btn btn-primary btn-sm mb-1" onclick="window.open('https://support.mozilla.org/es/kb/Borrar%20cookies','_blank')">Mozilla Firefox</button>
-- <button class="btn btn-primary btn-sm mb-1" onclick="window.open('https://support.microsoft.com/es-es/help/278835/how-to-delete-cookie-files-in-internet-explorer','_blank')">Internet Explorer</button>
-- <button class="btn btn-primary btn-sm mb-1" onclick="window.open('https://support.apple.com/es-es/guide/safari/sfri11471/mac','_blank')">Safari MAC OS</button>
-- <button class="btn btn-primary btn-sm mb-1" onclick="window.open('https://support.apple.com/es-es/HT201265','_blank')">Safari IOS iPhone y iPad</button>
-- <button class="btn btn-primary btn-sm mb-1" onclick="window.open('https://support.google.com/accounts/answer/61416?co=GENIE.Platform%3DAndroid&amp;hl=es&amp;oco=1','_blank')">Google Chrome Android</button>
-- <button class="btn btn-primary btn-sm mb-1" onclick="window.open('https://support.google.com/accounts/answer/61416?co=GENIE.Platform%3DiOS&amp;hl=es&amp;oco=1','_blank')">Google Chrome iPhone y iPad</button>
+- <span onclick="window.open('https://support.google.com/accounts/answer/61416?co=GENIE.Platform%3DDesktop&amp;hl=es','_blank')">Google Chrome</span>
+- <span onclick="window.open('https://support.mozilla.org/es/kb/Borrar%20cookies','_blank')">Mozilla Firefox</span>
+- <span onclick="window.open('https://support.microsoft.com/es-es/help/278835/how-to-delete-cookie-files-in-internet-explorer','_blank')">Internet Explorer</span>
+- <span onclick="window.open('https://support.apple.com/es-es/guide/safari/sfri11471/mac','_blank')">Safari MAC OS</span>
+- <span onclick="window.open('https://support.apple.com/es-es/HT201265','_blank')">Safari IOS iPhone y iPad</span>
+- <span onclick="window.open('https://support.google.com/accounts/answer/61416?co=GENIE.Platform%3DAndroid&amp;hl=es&amp;oco=1','_blank')">Google Chrome Android</span>
+- <span onclick="window.open('https://support.google.com/accounts/answer/61416?co=GENIE.Platform%3DiOS&amp;hl=es&amp;oco=1','_blank')">Google Chrome iPhone y iPad</span>
 
-<p>Así mismo, te relacionamos los enlaces a los sistemas propios habilitados por cada uno de los referidos proveedores externos para la desactivación de sus cookies:</p>
+Así mismo, te relacionamos los enlaces a los sistemas propios habilitados por cada uno de los referidos proveedores externos para la desactivación de sus cookies:
 
-- <button class="btn btn-primary btn-sm mb-1" onclick="window.open('https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage?hl=es','_blank')">Analytics</button>
+- <span onclick="window.open('https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage?hl=es','_blank')">Analytics</span>
 
 **Muchas gracias por tu colaboración**

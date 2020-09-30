@@ -3,4 +3,5 @@ layout: null
 ---
 User-agent: *
 Allow: /
+Disallow: /drafts/
 Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml
