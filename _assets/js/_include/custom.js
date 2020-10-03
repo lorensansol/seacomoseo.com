@@ -110,38 +110,33 @@ function toggleComments(){
 	});
 {% endif %}
 
-// Load prism scripts and styles if exist div code
+// Load prism scripts and styles if exist div code and don't have location.port (development)
 const codePre = document.querySelectorAll('pre code[class*="language-"]');
-if (codePre){
-	{% if jekyll.environment == "production" %}
-		loadScript('https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/components/prism-core.min.js');
-		codePre.forEach( c => {
-			let codeLanguage = c.getAttribute('class').split('-')[1]
-			switch (codeLanguage) {
-				case 'html':
-				case 'xml':
-				case 'svg':
-				case 'mathml':
-				case 'ssml':
-				case 'atom':
-				case 'rss':
-					codeLanguage = 'markup'
-					break;
-				case 'javascript':
-				case 'js':
-					codeLanguage = 'javascript'
-					loadScript('https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/components/prism-clike.min.js');
-					break;
-			}
-			loadScript('https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/components/prism-' + codeLanguage + '.min.js');
-		});
-		loadStyle('https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/themes/prism-tomorrow.min.css');
-		loadScript('https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/toolbar/prism-toolbar.min.js');
-		loadScript('https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/show-language/prism-show-language.min.js');
-		loadScript('https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js');
-		loadStyle('https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/toolbar/prism-toolbar.min.css');
-	{% else %}
-		loadScript('{{ site.baseurl }}/_assets/js/prism.js');
-		loadStyle('{{ site.baseurl }}/_assets/css/prism.css');
-	{% endif %}
+if (codePre && !location.port){
+	loadScript('https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/components/prism-core.min.js');
+	codePre.forEach( c => {
+		let codeLanguage = c.getAttribute('class').split('-')[1]
+		switch (codeLanguage) {
+			case 'html':
+			case 'xml':
+			case 'svg':
+			case 'mathml':
+			case 'ssml':
+			case 'atom':
+			case 'rss':
+				codeLanguage = 'markup'
+				break;
+			case 'javascript':
+			case 'js':
+				codeLanguage = 'javascript'
+				loadScript('https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/components/prism-clike.min.js');
+				break;
+		}
+		loadScript('https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/components/prism-' + codeLanguage + '.min.js');
+	});
+	loadStyle('https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/themes/prism-tomorrow.min.css');
+	loadScript('https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/toolbar/prism-toolbar.min.js');
+	loadScript('https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/show-language/prism-show-language.min.js');
+	loadScript('https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js');
+	loadStyle('https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/toolbar/prism-toolbar.min.css');
 }

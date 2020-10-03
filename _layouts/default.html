@@ -41,6 +41,8 @@ layout: compress
     {% else %}
         <link rel="stylesheet" href="{{ site.baseurl }}/_assets/fonts/fonts.css" media="print" onload="this.media='all'">
         <link rel="stylesheet" href="{{ site.baseurl }}/_assets/fonts/fontawesome-v5.10.0.css" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="{{ site.baseurl }}/_assets/css/prism.css" media="print" onload="this.media='all'">
+        <script src="{{ site.baseurl }}/_assets/js/prism.js" assync></script>
     {% endif %}
 
     <link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="{{ site.baseurl }}{{ assetsdir }}/img/favicon.ico">
@@ -216,7 +218,7 @@ layout: compress
 
 <!-- Scripts (if you need bootstrap.js, please add it yourself. I didn't use it for performance reasons, it was not needed in this theme)
 ================================================== -->
-<script src="{{ site.baseurl }}{{ assetsdir }}/js/scripts.js"></script>
+<script src="{{ site.baseurl }}{{ assetsdir }}/js/scripts.js" assync></script>
 
 </body>
 </html>
