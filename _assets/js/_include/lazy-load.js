@@ -1,5 +1,5 @@
 // LAZY-LOAD CLOCK
-function clock(nodo) {
+function srcClock(nodo) {
 	nodo.classList.add('lazyload');
 	var width = nodo.getAttribute('width') || '100%';
 	var height = nodo.getAttribute('height') || '100%';
@@ -20,9 +20,8 @@ scrollShot(
 		nodo.srcset = nodo.dataset.srcset || imgSmall + ' 400w, ' + imgBig + ' ' + width;
 		nodo.sizes = nodo.dataset.sizes || '(max-width: 480px) calc(90vw - 30px), (max-width: 600px) calc(90vw - 30px - 40px), (max-width: 927px) calc(90vw - 95px - 40px), 700px';
 		nodo.classList.remove('lazyload');
-		console.log('si-article-post', nodo)
 	},
-	clock
+	srcClock
 );
 
 // LAZY-LOAD DATA-SRC
@@ -35,9 +34,8 @@ scrollShot(
 		if (nodo.dataset.srcset) nodo.srcset = nodo.dataset.srcset;
 		if (nodo.dataset.sizes) nodo.sizes = nodo.dataset.sizes;
 		nodo.classList.remove('lazyload');
-		console.log('shot2');
 	},
-	clock
+	srcClock
 );
 
 // LAZY-LOAD DATA-STYLE
@@ -45,5 +43,6 @@ scrollShot(
 	'0px',
 	'160px',
 	'[data-style]',
-	nodo => nodo.style = nodo.dataset.style
+	nodo => nodo.style = nodo.dataset.style,
+	nodo => nodo.style = "background-image: url(data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cstyle%3Epath%7Btransform-origin:center%7Dpath:nth-child%282%29%7Banimation:spin 2s linear infinite%7Dpath:nth-child%283%29%7Banimation:spin calc%282s %2A 12%29 linear infinite%7D%40keyframes spin%7Bto%7Btransform:rotate%28360deg%29%7D%7D%3C/style%3E%3Cg fill='none' stroke='gray' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10'%3E%3Ccircle cx='8' cy='8' r='7.5'/%3E%3Cpath d='M8 3 V8'/%3E%3Cpath d='M8 8 L10 10'/%3E%3C/g%3E%3C/svg%3E); background-repeat: no-repeat; background-position: center;"
 );

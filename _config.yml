@@ -1,5 +1,5 @@
 # Site
-name: 'SEA COMO SEO'
+name: '&lt;<span class="text-dark">SEA</span>&GT; COMO &LT;/<span class="text-dark">SEO</span>&gt;'
 title: 'SEA COMO SEO'
 description: 'Tutoriales y trucos de SEO, Diseño Web y Desarrollo'
 url: https://lorensansol.github.io
@@ -38,7 +38,7 @@ authors:
     twitter: https://twitter.com/wowthemesnet
     description: 'This is the author box. Write a short description of the author here. You are currently previewing Mediumish demo, a Jekyll template compatible with Github pages.'
   loren:
-    name: Loren San Sol
+    name: Loren
     avatar: /assets/img/loren-san-sol-scs.jpg
     gravatar: a48d43c9530f50721162853c0b68aebc
     # email: '&#x6C;&#x6F;&#x72;&#x65;&#x6E;&#x73;&#x61;&#x6E;&#x73;&#x6F;&#x6C;&#x40;&#x67;&#x6D;&#x61;&#x69;&#x6C;&#x2E;&#x63;&#x6F;&#x6D;'

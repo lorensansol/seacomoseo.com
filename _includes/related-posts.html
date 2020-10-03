@@ -32,21 +32,21 @@
             {% assign commonTags = '' %}
         
             {% for category in post.categories %}
-            {% if post.url != page.url %}
-                {% if page.categories contains category %}
-                {% assign sameTagCount = sameTagCount | plus: 1 %}
-                {% capture tagmarkup %} {{ category }} {% endcapture %}
-                {% assign commonTags = commonTags | append: tagmarkup %}
+                {% if post.url != page.url %}
+                    {% if page.categories contains category %}
+                        {% assign sameTagCount = sameTagCount | plus: 1 %}
+                        {% capture tagmarkup %} {{ category }} {% endcapture %}
+                        {% assign commonTags = commonTags | append: tagmarkup %}
+                    {% endif %}
                 {% endif %}
-            {% endif %}
             {% endfor %}
         
             {% if sameTagCount >= minCommonTags %}
-            {% include postbox.html %}
-            {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
-            {% if maxRelatedCounter >= maxRelated %}
-                {% break %}
-            {% endif %}
+                {% include postbox.html %}
+                {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+                {% if maxRelatedCounter >= maxRelated %}
+                    {% break %}
+                {% endif %}
             {% endif %}
         
         {% endfor %}

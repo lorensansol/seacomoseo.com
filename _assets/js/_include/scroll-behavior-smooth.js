@@ -14,5 +14,5 @@ if(!('scrollBehavior' in document.documentElement.style)){
 			});
 		});
 	}
-	loadScript('/js/smooth-scroll.js', smoothScroll);
+	loadScript('{{ site.baseurl }}/assets/js/smooth-scroll.js', smoothScroll);
 }

@@ -86,7 +86,7 @@ function toggleComments(){
 	document.getElementById('comments').classList.toggle('comments--show');
 }
 
-{% if site.lazy-load.comments %}
+{% if site.lazy-load-comments %}
 	// Lazy-Load show comments
 	scrollShot(
 		'0px',

@@ -6,12 +6,14 @@ $teal: #40FFDC;
 $black: #111;
 // $primary: $teal;
 $primary: #FFE082;
-$dark: $black;
+$dark: #212529;
 $enable-rounded: false;
 
 @import 'bootstrap/bootstrap';
 @import 'memoirs';
+@import 'smooth-scroll';
 @import 'cookies-message';
 @import 'scroll-show';
+@import 'btn-up';
 @import 'lazy-load';
 @import 'custom';

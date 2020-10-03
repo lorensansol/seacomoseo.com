@@ -1,9 +1,9 @@
 <!-- begin post -->
 {% assign author = site.authors[post.author] %}
 
-<div class="blog-grid-item">
+<div class="blog-grid-item" onclick="location.href='{{ site.baseurl }}{{ post.url }}'">
     <div class="card h-100 w-100">
-        <div class="maxthumb" onclick="location.href='{{ site.baseurl }}{{ post.url }}'">
+        <div class="maxthumb">
             {% include featured-image.html image=post.image %}
         </div>
         <div class="card-body">
@@ -27,20 +27,7 @@
                         {% endif %}
                     </span>
                     <span class="author-meta">
-                        <span class="post-name">
-
-                          {% if author.name %}
-                            {% if site.author-links %}
-                              {% if author.web %}
-                                <a onclick="window.open('{{ author.web }}','_blank')">{{ author.name }}</a>
-                              {% else %}
-                                <a onclick="location.href='{{ site.baseurl }}/autores#{% if page.author %}{{ page.author }}{% else %}{{ auth[0] }}{% endif %}'">{{ author.name }}</a>
-                              {% endif %}
-                            {% else %}
-                              <span class="font-weight-bold">{{ author.name }}</span> 
-                            {% endif %}
-                          {% endif %}
-                        </span> 
+                        <span class="post-name font-weight-bold">{{ author.name }}</span> 
                 {% endif %}
                     <span class="post-date">
                         {% include date-spa.html date=post.date %}

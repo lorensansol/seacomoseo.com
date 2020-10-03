@@ -1,6 +1,8 @@
-// Smooth scroll
-html {
-	scroll-behavior: smooth;
+// Text logo size responsive
+@media (max-width: 575px) {
+    .sm-h4 {
+        font-size: 1.5rem;
+    }
 }
 
 // Color of onclick links and primary text
@@ -17,7 +19,8 @@ span[onclick]:not(.btn):hover {
 }
 
 // Correct min-width in btn + badge
-.badge.btn {
+.badge.btn,
+.btn-up .btn {
     min-width: inherit !important;
 }
 
