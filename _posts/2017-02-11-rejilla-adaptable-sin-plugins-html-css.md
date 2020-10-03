@@ -2,8 +2,6 @@
 title: Cómo crear una rejilla adaptable sin plugins, sólo con HTML y CSS
 categories: General
 image: /assets/img/rejilla-adaptable-sin-plugins-html-css.jpg
-code: true
-
 ---
 
 ¡Hola chavalada! Con todo el tema este del [#RETOTSA](https://www.youtube.com/watch?v=FXqwMT6bcdw){:target="_blank"} [[2]](https://www.youtube.com/watch?v=2A8XYbPXfo0){:target="\_blank"} estamos unos cuantos aprendiendo un buen capazo a base de dudas y respuestas en el [grupaco de los 300 de Telegram](https://images-na.ssl-images-amazon.com/images/M/MV5BMTMwNTg5MzMwMV5BMl5BanBnXkFtZTcwMzA2NTIyMw@@._V1_SX1777_CR0,0,1777,937_AL_.jpg){:target="\_blank"}, y entre muchas de las dudas surge el tema de crear la rejilla de productos o categorías para los [TSA-commerce](https://romualdfons.com/crear-tienda-online-de-afiliados/){:target="\_blank"}.

@@ -65,7 +65,6 @@ npx babel assets/js/scripts.min.js --out-file assets/js/scripts.babel.min.js
 
 ## FALTA
 
-- Cargar prism externo tras deploy
 - Quitar acentos en tag links de toc
 - Comprobar Carga diferida de css
   - critical diferente según pagetype

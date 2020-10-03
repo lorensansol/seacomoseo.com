@@ -130,5 +130,7 @@ markdown: kramdown
 kramdown:
   syntax_highlighter_opts:
     disable: true
+  auto_id_stripping: true
+  transliterated_header_ids: true
 
 # DEVELOPMENT CONFIG IN _config_dev.yml
